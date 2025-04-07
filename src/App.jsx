@@ -1,19 +1,25 @@
-// src/App.js
 import React from "react";
 import { Provider } from "react-redux";
-// import TodoForm from "./components/TodoForm";
-// import TaskList from "./components/TaskList";
 import Store from "./redux/Store";
 import ToDoForm from "./Components/ToDoForm";
 import TaskList from "./Components/TaskList";
+import "./App.css"; 
 
 const App = () => {
   return (
     <Provider store={Store}>
-      <div>
+      <div className="app-container">
         <h1>To-Do List</h1>
-        <ToDoForm />
-        <TaskList />
+        <div className="form-list-container">
+          <div className="todo-form-container">
+            <h2>Add New Task</h2> 
+            <ToDoForm />
+          </div>
+          <div className="task-list-wrapper">
+            <h2>Task List</h2>
+            <TaskList />
+          </div>
+        </div>
       </div>
     </Provider>
   );
